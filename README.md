@@ -19,14 +19,15 @@ To_int(“SDG_Field”)
 Then click ok and the new field should generate. <br>
 Now we will  export and Convert to GeoJSON. <br>
 Right-click and the layer <b>Export</b> Save Vector Layer As<br>
-Format change to GeoJSON-Newline Delimited<br>
+Format change to GeoJSON<br>
 Name your file and make sure you see where it is being saved.<br>
 You only need to keep the attribute with the name of the country and the value – so only toggle the country name and the SDG value field you just created.<br>
 ##Open the new GeoJSON file in a text editor
-On line one before the open brackets Add 
+One line one before the open brackets Add 
 ```
 var nationData=
 ```
+Find and replace Null Values with "No Data" the process to do this will be different in different text editors. <be>
 Next Click File Save As and name it and save it with .js extension
 
 Close this file. <br>
