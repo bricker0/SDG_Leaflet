@@ -27,7 +27,7 @@ One line one before the open brackets Add
 ```
 var nationData=
 ```
-Find and replace Null Values with "No Data" the process to do this will be different in different text editors. <be>
+
 Next Click File Save As and name it and save it with .js extension
 
 Close this file. <br>
