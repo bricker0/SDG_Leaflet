@@ -2,19 +2,19 @@
 Create a global SDG Choropleth Map using Leaflet
 See a live working version here https://bricker0.github.io/leaflet.html  
 ## Steps
-•	Convert your shapefile to geojson
-•	Create a webmap using the Leaflet API
-•	Reference your geojson file on your webmap
+•	Convert your shapefile to geojson<br>
+•	Create a webmap using the Leaflet API<br>
+•	Reference your geojson file on your webmap<br>
 ## Prepare your data in QGIS
-Open your shapefile with the countries and joined data. 
-Open the attribute table. 
+Open your shapefile with the countries and joined data. <br>
+Open the attribute table. <br>
 Please make sure you write down the goal, target, and indicator title year the data were collected and any other relevant info that you might want to include in the text on your website about the map
 The SDG value – if it is more than 2 decimal places, please convert the value to an integer. 
 To do this – when the attribute table is open and editable –click field calculator this icon. 
 Toggle “Create New Field” and name it SDG
 Then cut and past this expression and replace SDG_Field with the name of the field with your SDG indicator in it. 
 To_int(“SDG_Field”)
-Then click ok and the new field should generate. 
+Then click ok and the new field should generate. <br>
 Now we will  export and Convert to GeoJSON. 
 Right-click and the layer <b>Export</b> Save Vector Layer As
 Format change to GeoJSON-Newline Delimited
