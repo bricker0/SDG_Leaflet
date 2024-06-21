@@ -1,6 +1,7 @@
 # SDG_Leaflet
-Create a global SDG Choropleth Map using Leaflet
-See a live working version here https://bricker0.github.io/leaflet.html  
+Now that you have followed the tutorial to make a <a href="https://github.com/bricker0/choropleth_map">Choropleth map using SDG data and QGIS here </a> Now you want to make it interactive and this map online!  
+Here I will show you how to create a global SDG Choropleth Map using Leaflet. Here I explain how to clean your data in QGIS and then I build and modify code from this <a href="https://leafletjs.com/examples/choropleth/"> leaflet tutorial.</a>
+See a  <a href="https://bricker0.github.io/leaflet.html"> live working version here</a> 
 ## Steps
 •	Convert your shapefile to geojson<br>
 •	Create a webmap using the Leaflet API<br>
