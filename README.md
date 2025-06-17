@@ -1,13 +1,17 @@
 # SDG_Leaflet Choropleth Map - light and interactive 
-Now that you have followed the tutorial to make a static SDG choropleth map <a href="https://github.com/bricker0/choropleth_map">Choropleth map using SDG data and QGIS here</a> Next, make it interactive and put it online!  
+Now that you have followed the tutorial to make a static SDG choropleth map <a href="https://github.com/bricker0/choropleth_map">Choropleth map using SDG data and QGIS here</a> or maybe you <a href="https://github.com/bricker0/MappingSDGsTechnicalSupplement">followed this version</a> - doesn't matter!
+
+Next, make it interactive and put it online!  
 Here, I will show you how to create a global SDG Choropleth Map using Leaflet. Here I explain how to clean your data in QGIS and then I build and modify code from this <a href="https://leafletjs.com/examples/choropleth/"> leaflet tutorial.</a>
 See a  <a href="https://bricker0.github.io/leaflet.html"> live working version here</a> 
+
+You may want to learn to make a website first -<a href="https://slides.com/brittaricker-1/make-a-website-together-by-hand/"> following this tutorial </a>. Another version of the directions here can be found in <a href="https://slides.com/brittaricker-1/put-a-map-on-it/">these slides.</a> 
 ## Steps
 • Pick a Title for your and any relevant notes about the data map - use your favorite text editor<br>
 • 	Prepare your data by cleaning your data (only attribute data you need in your webmap) converting your shapefile to geojson in QGIS<br>
 •	OPen it in a text editor and save as a .js file	
 •	Create a html page and call the Leaflet API to add a map<br>
-•	Reference your geojson file on your webmap<br>
+•	Reference your geojson file which (you converted and saved as .js file) on your webmap<br>
 •	Stylize your map using CSS<br>
 
 
