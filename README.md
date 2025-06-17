@@ -11,7 +11,11 @@ See a  <a href="https://bricker0.github.io/leaflet.html"> live working version h
 •	Stylize your map using CSS<br>
 
 ## Start your website with a title for your map
+
 Open your favorite text editor (mine is Sublime) and start a document with the following HTML and change the text to match the dataset you are working with. Save the document as map.html
+
+In this example code - add the title of the map and add a base map - change the text to match your SDG indicator data
+
 ```
 
 <!DOCTYPE html>
