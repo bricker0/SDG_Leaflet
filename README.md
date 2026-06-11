@@ -1,15 +1,16 @@
 # SDG_Leaflet Choropleth Map - light and interactive 
 Now that you have followed the tutorial to make a static SDG choropleth map <a href="https://github.com/bricker0/choropleth_map">Choropleth map using SDG data and QGIS here</a> or maybe you <a href="https://github.com/bricker0/MappingSDGsTechnicalSupplement">followed this version</a> - doesn't matter!
 
-Next, make it interactive and put it online!  
-Here, I will show you how to create a global SDG Choropleth Map using Leaflet. Here I explain how to clean your data in QGIS and then I build and modify code from this <a href="https://leafletjs.com/examples/choropleth/"> leaflet tutorial.</a>
+Next, make it interactive and put it online! 
+
+Here, I will show you how to export the data you used to make the choropleth map in QGIS to then create a global interactive SDG Choropleth Map using Leaflet. Here I explain how to clean your data in QGIS and then I build and modify code from this <a href="https://leafletjs.com/examples/choropleth/"> leaflet tutorial.</a>
 See a  <a href="https://bricker0.github.io/leaflet.html"> live working version here</a> 
 
-You may want to learn to make a website first -<a href="https://slides.com/brittaricker-1/make-a-website-together-by-hand/"> following this tutorial </a>. Another version of the directions here can be found in <a href="https://slides.com/brittaricker-1/put-a-map-on-it/">these slides.</a> 
+You may want to read about how websites work and how to make a website first - I will go over this  -<a href="https://slides.com/brittaricker-1/make-a-website-together-by-hand/">  tutorial </a>. Another version of the directions here can be found in <a href="https://slides.com/brittaricker-1/put-a-map-on-it/">these slides.</a> 
 ## Steps
 • Pick a Title for your and any relevant notes about the data map - use your favorite text editor<br>
-• 	Prepare your data by cleaning your data (only attribute data you need in your webmap) converting your shapefile to geojson in QGIS<br>
-•	OPen it in a text editor and save as a .js file	
+• 	Prepare your data by cleaning your data (only attribute data you need in your webmap), converting your shapefile to geojson in QGIS<br>
+•	Open it in a text editor - add var nationData= and save as a .js file<br>	
 •	Create a html page and call the Leaflet API to add a map<br>
 •	Reference your geojson file which (you converted and saved as .js file) on your webmap<br>
 •	Stylize your map using CSS<br>
@@ -19,8 +20,8 @@ You may want to learn to make a website first -<a href="https://slides.com/britt
 ## Prepare your data in QGIS
 Open your shapefile with the countries and joined data using QGIS. <br>
 Open the attribute table. <br>
-Please make sure you write down the goal, target, and indicator title year the data were collected and any other relevant info that you might want to include in the text on your website about the map. <br>
-The SDG value – if it is more than 2 decimal places, please convert the value to an integer.  <br>
+Please make sure you write down the goal, target, and indicator title year the data were collected and any other relevant info that you might want to include in the text on your website about the map. This will go in the title and written description on your website. <br>
+The SDG value – if it is more than 2 decimal places, please convert the value to an integer. Otherwise it will be too much information. <br>
 To do this –(there are a few different ways to do this - here is one) when the attribute table is open and editable –click field calculator. <br>
 Toggle “Create New Field” and name it SDG_Field<br>
 Then cut and paste this expression and replace SDG_Field with the name of the field with your SDG indicator in it. <br>
@@ -41,7 +42,7 @@ On line one, before the open brackets Add the following text
 var nationData=
 ```
 
-Next, Finally File Save As and name it and save it with .js extension
+Next, finally, File Save As and name it and save it with .js extension
 
 Close this file. <br>
 
@@ -106,8 +107,8 @@ In this example code - add the title of the map and add a base map - change the 
 </body>
 </html>
 ```
-## Modify the HTML file I provide below 
-In the code below - copy and paste and open the HTML file in your text editor. Read the code carefully. You will need to add and reference your own JS file - change the labels, the color, the class breaks. I tried to leave some hits for you in the commented-out code. Find all the places I left UPDATE in the comments. These are the places you need to make changes to reference your documents. You can control f to find those places.
+## Modify the HTML file I provided below 
+In the code below, copy and paste and open the HTML file in your text editor. Read the code carefully. You will need to add and reference your own JS file - change the labels, the color, the class breaks. I tried to leave some hits for you in the commented-out code. Find all the places I left UPDATE in the comments. These are the places you need to make changes to reference your documents. You can control f to find those places.
 <br>
 ```
 
@@ -274,6 +275,6 @@ In the code below - copy and paste and open the HTML file in your text editor. R
 </html>
 
 ```
-Eventually, you will have a full website to showcase your work in this course. You may use the template I provide here above called ChorstudentProjectPage.html, and then modify the code in it as I have described above. Be sure to replace all of the text with your own text and written descriptions. 
+Eventually, you will have a full website to showcase your work in this course. You may use the template I provided above, called ChorstudentProjectPage.html, and then modify the code in it as I have described above. Be sure to replace all of the text with your own text and written descriptions. 
 
 Good luck!
