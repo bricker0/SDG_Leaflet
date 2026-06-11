@@ -274,4 +274,6 @@ In the code below - copy and paste and open the HTML file in your text editor. R
 </html>
 
 ```
+Eventually, you will have a full website to showcase your work in this course. You may use the template I provide here above called ChorstudentProjectPage.html, and then modify the code in it as I have described above. Be sure to replace all of the text with your own text and written descriptions. 
+
 Good luck!
