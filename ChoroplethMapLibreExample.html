@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>SDG 15.1.1 Forest Area 2025</title>
+
+<link
+href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+rel="stylesheet"
+/>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+<style>
+
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+}
+
+#map{
+    position:absolute;
+    top:60px;
+    bottom:0;
+    width:100%;
+}
+
+#title{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:60px;
+    background:white;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    font-weight:bold;
+    border-bottom:1px solid #ccc;
+}
+
+.legend{
+    background:white;
+    padding:12px;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    font-size:13px;
+}
+
+.maplibregl-popup-content{
+    font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="title">
+SDG 15.1.1 Forest area as a proportion of total land area (%) year 2025
+</div>
+
+<div id="map"></div>
+
+<script>
+
+const map = new maplibregl.Map({
+    container:'map',
+    style:{
+        version:8,
+        sources:{
+            osm:{
+                type:'raster',
+                tiles:[
+                  'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+                ],
+                tileSize:256,
+                attribution:'© OpenStreetMap'
+            }
+        },
+        layers:[
+            {
+                id:'osm',
+                type:'raster',
+                source:'osm'
+            }
+        ]
+    },
+    center:[0,20],
+    zoom:1.5
+});
+
+map.addControl(new maplibregl.NavigationControl());
+
+map.on('load', function(){
+
+    map.addSource('sdg15',{
+
+       type:'geojson',
+
+        data: 'https://raw.githubusercontent.com/bricker0/SDG_Leaflet/main/SDG15.geojson'
+
+
+    });
+
+
+
+    map.addLayer({
+
+        id:'forest-layer',
+
+        type:'fill',
+
+        source:'sdg15',
+
+        paint:{
+
+            'fill-color':[
+
+                'interpolate',
+                ['linear'],
+                ['get','whole2'],
+
+                0,'#f7fcfd',
+                10,'#e5f5e0',
+                20,'#c7e9c0',
+                30,'#a1d99b',
+                40,'#74c476',
+                50,'#41ab5d',
+                60,'#238b45',
+                70,'#006d2c',
+                90,'#00441b'
+
+            ],
+
+            'fill-opacity':0.8
+
+        }
+
+    });
+
+
+
+    map.addLayer({
+
+        id:'forest-outline',
+
+        type:'line',
+
+        source:'sdg15',
+
+        paint:{
+            'line-color':'white',
+            'line-width':0.5
+        }
+
+    });
+
+
+
+    const popup = new maplibregl.Popup({
+        closeButton:false,
+        closeOnClick:false
+    });
+
+
+
+    map.on('mousemove','forest-layer',function(e){
+
+        map.getCanvas().style.cursor='pointer';
+
+        const feature = e.features[0];
+
+        const country =
+            feature.properties.ADMIN ||
+            feature.properties.NAME_LONG ||
+            feature.properties.name ||
+            'Unknown';
+
+        const value =
+            feature.properties.whole2;
+
+        popup
+            .setLngLat(e.lngLat)
+            .setHTML(
+                '<b>' + country + '</b><br>' +
+                'Forest Area: ' + value + '%'
+            )
+            .addTo(map);
+
+    });
+
+
+
+    map.on('mouseleave','forest-layer',function(){
+
+        map.getCanvas().style.cursor='';
+
+        popup.remove();
+
+    });
+
+
+
+    // LEGEND
+
+    const legend = document.createElement('div');
+
+    legend.className='legend';
+
+    legend.innerHTML=`
+    <b>Forest area as a proportion of total land area (%)</b>
+    <br><br>
+
+    <div><span style="background:#f7fcfd;width:20px;height:12px;display:inline-block;"></span> 0–10</div>
+
+    <div><span style="background:#c7e9c0;width:20px;height:12px;display:inline-block;"></span> 10–30</div>
+
+    <div><span style="background:#74c476;width:20px;height:12px;display:inline-block;"></span> 30–50</div>
+
+    <div><span style="background:#238b45;width:20px;height:12px;display:inline-block;"></span> 50–70</div>
+
+    <div><span style="background:#00441b;width:20px;height:12px;display:inline-block;"></span> 70+</div>
+    `;
+
+    map.addControl({
+        onAdd: function() {
+            return legend;
+        },
+        onRemove: function() {}
+    }, 'bottom-right');
+
+});
+
+</script>
+
+</body>
+</html>
