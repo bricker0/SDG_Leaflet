@@ -10,7 +10,7 @@ You may want to read about how websites work and how to make a website first - I
 ## Steps
 • Pick a Title for your and any relevant notes about the data map - use your favorite text editor<br>
 • 	Prepare your data by cleaning your data (only attribute data you need in your webmap), converting your shapefile to geojson in QGIS<br>
-•	Open it in a text editor - add var nationData= and save as a .js file<br>	
+•	Open it in a text editor - add var nationData= and save as a .js file - if you decide to use mapLibre - keep it as a geojson file and do not make any changes<br>	
 •	Create a html page and call the Leaflet API to add a map<br>
 •	Reference your geojson file which (you converted and saved as .js file) on your webmap<br>
 •	Stylize your map using CSS<br>
