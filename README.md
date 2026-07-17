@@ -34,13 +34,14 @@ Then, cut and paste this expression and replace SDG_Field with the name of the f
 ```
 To_int(“SDG_Field”)
 ```
-Then click ok and the new field should generate. <br>
+Then click ok and the new field should be generated. <br>
 Now we will export and convert to GeoJSON. <br>
 To do this - Right-click and the layer <b>Export</b> Save Vector Layer As<br>
 Format change to GeoJSON<br>
 
 You will only need to keep the attribute with the name of the country and the value – so only toggle the country name and the SDG value field you just created.<br>
 Change the CRS from Eckart IV to Web Mercator - which is <b> Default CRS: EPSG:4326 - WGS 84 </b><br>
+make sure you export the geometry too - have that box toggled<br>
 Name your file and make sure you save it to the directory with the rest of your files - note where it is being saved.<br>
 Then click okay<br>
 
